@@ -52,6 +52,7 @@ class DB implements DatabaseInterface{
         }else{
             $this->sql = "SELECT $fields FROM `$this->table` WHERE $condition";
         }
+        // var_dump($this->sql);
              $res = $this->con->query($this->sql);
              while($raw = $res->fetch_assoc()){
             array_push($result , $raw);
@@ -78,19 +79,4 @@ class DB implements DatabaseInterface{
 
     }
 }
-
-
-$obj = new DB('tasks');
-
-echo "<pre>";
-var_dump($obj->InsertData([
-"title" => "three",
-"description" => "four",
-'user_id' => 1
-])->excute()
-);
-// $obj->excute();
-
-
-
 ?>
