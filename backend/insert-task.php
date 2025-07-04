@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $title = $_POST['title'];
     $description = $_POST['description'];
 
-    $obj = new DB("tasks");
+    // $obj = new DB("tasks");
    $res =  $obj->InsertData([
         "title" => $title,
         "description" => $description,
