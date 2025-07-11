@@ -1,18 +1,14 @@
-
 <?php
-       session_start();
-
-
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
-
 <body>
-
   <!-- Navbar with Mega Menu -->
   <nav class="bg-white shadow-lg">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -157,7 +153,10 @@
                 </a>
               </div>
             </div>
-        
       </div>
     </div>
   </nav>
+
+
+
+  <!-- https://github.com/ahmed0x99/G87 -->

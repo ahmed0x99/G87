@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         "description" => $description,
         "user_id" => $_SESSION['user'][0]['id']
     ])->excute();
+    $_SESSION['insert'] = 1;
     header("Location:../frontend/home.php");
     // echo "<pre>";
     // print_r($res);
