@@ -23,6 +23,22 @@ require_once './partials/header.php';
         unset($_SESSION['delete']);
    }
 
+   if (isset($_SESSION['reset'])) {
+        echo <<< eof
+            <script>
+               Toastify({
+                  text: "Password Updated Successfully!",
+                  className: "info",
+                  style: {
+                    background: "linear-gradient(to right, #f0f, #a0a)",
+                  }
+                }).showToast();
+            </script>        
+        eof;
+
+        unset($_SESSION['reset']);
+   }
+
 
    if (isset($_SESSION['insert'])) {
         echo <<< eof

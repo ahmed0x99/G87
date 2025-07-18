@@ -14,29 +14,32 @@
    
     <div class="relative py-3 sm:max-w-xs sm:mx-auto">
         <?php
+session_start();
+
         
-        session_start();
+        // echo "<pre>";
+        // print_r($_SESSION);die;
         if (isset($_SESSION['not_found'])) {
             echo <<<e
-            <div class='text-red-600 text-center'>Wrong Credentials</div>
+            <div class='text-red-600 text-center'>Email Not Found</div>
             
             e;
         }
-        
+        unset($_SESSION['not_found']);
         ?>
-        <form action="../backend/login.php" method="POST" class="min-h-96 px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900  rounded-xl shadow-lg">
+        <form action="../backend/reset.php" method="POST" class="min-h-96 px-8 py-6 mt-4 text-left bg-white dark:bg-gray-900  rounded-xl shadow-lg">
             <div class="flex flex-col justify-center items-center h-full select-none">
                 <div class="flex flex-col items-center justify-center gap-2 mb-8">
-                    <a href="https://amethgalarcio.web.app/" target="_blank">
+                    <!-- <a href="https://amethgalarcio.web.app/" target="_blank">
                         <img src="https://amethgalarcio.web.app/assets/logo-42fde28c.svg" class="w-8" />
-                    </a>
-                    <p class="m-0 text-[16px] font-semibold dark:text-white">Login to your Account</p>
-                    <span class="m-0 text-xs max-w-[90%] text-center text-[#8B8E98]">Get started with our app, just start section and enjoy experience.
-                    </span>
+                    </a> -->
+                    <p class="m-0 text-[16px] font-semibold dark:text-white">Reset Password</p>
+                    <!-- <span class="m-0 text-xs max-w-[90%] text-center text-[#8B8E98]">Get started with our app, just start section and enjoy experience.
+                    </span> -->
                 </div>
                 <div class="w-full flex flex-col gap-2">
                     <label class="font-semibold text-xs text-gray-400 ">Email</label>
-                    <input type="email" name="email" class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900" placeholder="Username" />
+                    <input type="email" readonly name="email" class="border rounded-lg px-3 py-2 mb-5 text-sm w-full outline-none dark:border-gray-500 dark:bg-gray-900" placeholder="Username" value="<?php echo $_SESSION['user']['email'];?>" />
 
                 </div>
             </div>
