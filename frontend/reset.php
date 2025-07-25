@@ -11,18 +11,13 @@
 <body>
 
     <div class="w-screen min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-800 px-4 sm:px-6 lg:px-8">
-   
+   <!-- CESCHOOL!BE -->
     <div class="relative py-3 sm:max-w-xs sm:mx-auto">
         <?php
-session_start();
-
-        
-        // echo "<pre>";
-        // print_r($_SESSION);die;
+        session_start();
         if (isset($_SESSION['not_found'])) {
             echo <<<e
             <div class='text-red-600 text-center'>Email Not Found</div>
-            
             e;
         }
         unset($_SESSION['not_found']);
